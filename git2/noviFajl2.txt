@@ -1,7 +1,0 @@
-ovo je tekst u novom fajlu sa imenom noviFajl2
-.
-.
-.
-.
-.
-sada ima 7 redova

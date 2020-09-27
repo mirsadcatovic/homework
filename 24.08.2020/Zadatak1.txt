@@ -1,0 +1,4 @@
+1. Pomocu komandi naucenih na danasnjem predavanju, napraviti dve izmene u vidu novih fajlova 
+koje cete smestiti u folder koji ste danas napravili a nakon toga izmene okaciti na git hub-u.
+
+https://github.com/mirsadcatovic

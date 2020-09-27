@@ -1,0 +1,16 @@
+2. Navesti razliku izmedju commit i merge komandi.
+
+commit komanda nam sluzi da sacuvamo promene za fajl ili fajlove na lokalnom nivou (local repository).
+E sada, taj fajl ili fajlovi mogu biti novo kreirani ili klonirani i povuceni sa nekog udaljenog skladista.
+Pre nego sto fajl commit-ujemo, trebali bi ga add-ovati, tj. spremiti da ga kasnije posaljemo na udaljeno
+skladiste (remote git repository). Mozemo add-ovati sve ili svaki fajl posebno. Za fajlove, koje smo u tom trenutku add-ovali,
+mozemo da dodamo komentar preko commit komande (git commit -m "Komentar") koji se odnosi na vrste promena koje smo izvrsili
+na dodatom fajlu kako bi ljudi koji rade na istom projektu lakse i preglednije znali
+
+merge komanda nam sluzi kako bi granu u kojoj se nalazimo spojili sa master granom
+Pri tom spajanju folderi i fajlovi koji se nalaze na merge-ovanoj grani ostaju i dalje na njoj,
+ali se kopiraju i na master granu. Merge-ovana grana je i dalje vidljiva. Postoji opcija u podesavanjima
+GitHub-a ili nekog drugog git repository, koja tu merge-ovanu granu posle spajanja sa masterom moze i da obrise.
+Ali ta opcija se uglavnom ne koristi iz prakticnih razloga gde neke promene koje smo izvrsili na merge-ovanoj
+grani mogu biti toliko velike i lose da ceo program nece raditi i zbog lakse ispravke, merge-ovana grana
+se ostavlja da i dalje postoji pored master grane.

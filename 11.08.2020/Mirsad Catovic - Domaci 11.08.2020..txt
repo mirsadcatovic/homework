@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class CetiriBrojaMnozenjeSabiranje {
+    public static void main(String[] args) {
+        //Napisati program koji od korisnika trazi da unese cetiri cela broja od 0 do n a zatim da
+        // prva dva broja pomnozi a treci i cetvrti sabere. Rezultat oba racunanja treba da se ispisuje zajedno
+        // sa informacijom da li je rezultat tih racunanja paran ili neparan broj.
+        int a, b, c, d, proizvod, zbir;
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Unesi prvi broj: ");
+        a = in.nextInt();
+        System.out.println("Unesi drugi broj: ");
+        b = in.nextInt();
+        System.out.println("Unesi treci broj: ");
+        c = in.nextInt();
+        System.out.println("Unesi cetvrti broj: ");
+        d = in.nextInt();
+
+        if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
+            System.out.println("Morate uneti vrednosti koje su vece od 0.");
+            System.exit(1);
+        }
+        proizvod = a * b;
+        if (proizvod % 2 == 0) {
+            System.out.println(String.format("Proizvod broja %d i broja %d iznosi %d", a, b, a * b));
+            System.out.println(String.format("Broj %d je paran broj", a * b));
+        } else {
+            System.out.println(String.format("Proizvod broja %d i broja %d iznosi %d", a, b, a * b));
+            System.out.println(String.format("Broj %d je neparan broj", a * b));
+        }
+        zbir = c + d;
+        if (zbir % 2 == 0) {
+            System.out.println(String.format("Proizvod broja %d i broja %d iznosi %d", c, d, c + d));
+            System.out.println(String.format("Broj %d je paran broj", c + d));
+        } else {
+            System.out.println(String.format("Proizvod broja %d i broja %d iznosi %d", c, d, c + d));
+            System.out.println(String.format("Broj %d je neparan broj", c + d));
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class KupovinaLoptica {
+    public static void main(String[] args) {
+        //Napisati program koji ubacuje unetu kolicinu lopti u korpu za kupovinu. Prilikom unosa
+        // broja lopti, u korpu se mora ubaciti minimum jedna lopta a maksimalan broj lopti koji
+        // moze da stane u korpu je 33.
+        int brojLoptica, sum = 0;
+        Scanner in = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Koliko loptica zelite da kupite: ");
+            brojLoptica = in.nextInt();
+            sum += brojLoptica;
+            if (brojLoptica < 1) {
+                System.out.println("Minimalna kupovina jeste 1.");
+                sum -= brojLoptica;
+                System.out.println("Trenutni broj loptica u korpi iznosi: " + sum);
+                continue;
+            }
+            if (brojLoptica >= 34) {
+                System.out.println("Maksinalna kupovina je 33.");
+                sum -= brojLoptica;
+                System.out.println("Trenutni broj loptica u korpi iznosi: " + sum);
+                continue;
+            }
+            if (sum == 33) {
+                System.out.println("Maksinalna kupovina je 33.");
+                break;
+            }
+            if (sum > 33) {
+                System.out.println("Maksinalna kupovina je 33.");
+                sum -= brojLoptica;
+                System.out.println("Trenutni broj loptica u korpi iznosi: " + sum);
+                continue;
+            }
+            System.out.println("Trenutni broj loptica u korpi iznosi: " + sum);
+        }
+        System.out.println("Uneti broj loptica za kupovinu iznosi: " + sum);
+    }
+}

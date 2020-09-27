@@ -1,0 +1,52 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Test Store Site">
+
+    <test name="SummerDressesFromWomen">
+        <classes>
+            <class name="rad.tests.SummerDressesFromWomenTest"/>
+        </classes>
+    </test>
+
+    <test name="SummerDressesFromDresses">
+        <classes>
+            <class name="rad.tests.SummerDressesFromDressesTest"/>
+        </classes>
+    </test>
+
+    <test name="SummerDressesURLs">
+        <classes>
+            <class name="rad.tests.SummerDressesURLsTest"/>
+        </classes>
+    </test>
+
+    <test name="OrderTwoDresses">
+        <classes>
+            <class name="rad.tests.OrderTwoDressesTest"/>
+        </classes>
+    </test>
+
+    <test name="CheckOrder">
+        <classes>
+            <class name="rad.tests.CheckOrderTest"/>
+        </classes>
+    </test>
+
+    <test name="SearchBar">
+        <classes>
+            <class name="rad.tests.SearchBarTest"/>
+        </classes>
+    </test>
+
+    <test name="ContactUs">
+        <classes>
+            <class name="rad.tests.ContactUsTest"/>
+        </classes>
+    </test>
+
+    <test name="SocialMediaAccounts">
+        <classes>
+            <class name="rad.tests.SocialMediaAccountsTest"/>
+        </classes>
+    </test>
+</suite>

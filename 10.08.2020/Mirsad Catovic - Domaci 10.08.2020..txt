@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class DeljenjeSa2_i_3 {
+    public static void main(String[] args) {
+        int n, i;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Unesite vrednosto broja n koja je veca ili jednaka 0:");
+        n = in.nextInt();
+        if (n < 0) {
+            System.out.println("Morate uneti vrednost koja je veca ili jednaka 0.");
+            System.exit(0);
+        }
+        if (n % 2 == 0 && n % 3 == 0) {
+            System.out.println("Rezultat deljenja broja " + n + " sa brojem 2 je: " + n / 2);
+            System.out.println("Rezultat deljenja broja " + n + " sa brojem 3 je: " + n / 3);
+        } else {
+            System.out.println("Uneti broj " + n + " ne ispunjava kriterijum da je deljiv i sa 2 i sa 3.");
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+import java.util.*;
+
+public class UnosDvaBrojaSabiranjeMnozenje {
+    public static void main(String[] args) {
+        int a, b;
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Unesite prvi broj:");
+        a = in.nextInt();
+        System.out.println("Unesite drugi broj:");
+        b = in.nextInt();
+
+        if (a + b <= 10) {
+            System.out.println(String.format("Zbir broja %d i broja %d iznosi %d.", a, b, a + b));
+        } else if (a + b > 10) {
+            System.out.println(String.format("Proizvod broja %d i broja %d iznosi %d.", a, b, a * b));
+        }
+    }
+}

@@ -1,0 +1,91 @@
+Promenljive mogu da se odnose na razlicite tipove podataka i unose se na razlicit naci.
+Svaku promenljivu treba deklarisati i definisati.
+Deklarisu se tako sto se pisu sa malim pocetnim slovom, bez razdvajanja izmedju reci, a svaku sledecu rec obicno pisemo velikim slovom radi preglednosti. Definisu se tako sto nekoj promeljivoj dodelimo odredjenu vrednost.
+npr.      int celiBroj = 10;
+int - tip podatka
+a - promenljiva koja je deklarisana pod nazivom "a"
+10 - vrednost te promenljive "a" koja je definisama sa vrednosti "10"
+
+Prosti tipovi podataka (primitive):
+int - koristi se za unos celih brojeva koji mogu biti i pozitivni i negativni. nula je isto celi broj.
+float - koristi se za unos decimalnih brojeva i pozitivnih i negativnih
+double - isto se koristi za unos decimalnih brojeva i pozitivnih i negativnih. Double zauzima vise memorije i pokriva vise decimalnih vrednosti u odnosu na float.
+(spomenuli)char - koristi se kada je vrednost promenljive jedno slovo, jedan znak. Kada se unosi vrednostot pise se izmedju navodnika sa jednom crticom. npr. 'a'
+boolean - moze da ima dve vrednosti (tacno i netacno)
+Postoji jos prostih tipova podataka.
+
+Slozeni tipovi podataka (non-primitive):
+String - koristi se za unos teksta. Kada se unosi vrednostot pise se izmedju navodnika sa dve crtice. npr. "a'"
+Array - koristi se za definisanje vise vrednosi koja jedna promenljiva moze da uzme.
+Class - naziv klase bi trebalo da pise se velikim pocetnim slovom. To samo je preporuka.
+Postoji jos slozenih tipova podataka.
+
+Petlje se koriste kada se isti kod izvrsava vise puta. Koriscenjem petlje kod postaje pregledniji.
+Postoje sledece petlje: 
+while - izvrsava se samo kada je uslov sa pocetka izpunjen. Izvrsava se sve dok je postavljen uslov ispunjen.
+
+while(uslov){
+telo petlje
+korekcija-uvacanje ili smanjenje kako si se obavila sledeca interacija}
+
+
+do/while - izvrsava se jednom, pa tek onda se proverava uslov
+
+do{
+telo petlje
+korekcija-uvacanje ili smanjenje kako si se obavila sledeca interacija, odnosno sledece ponavljanje tela petlje}
+while(uslov)
+
+for - izvrsava se samo kada je uslov sa pocetka izpunjen. Koristi se kada tacno znamo koliko puta je potrebno puta da se izvrsi kod u petlji
+
+for( inicijalizacija ; uslov ; korekcija ){
+telo petlje}
+Kod for petlje inicijalizacija, uslov i korekcija mogu da ne postoje ili samo neki od njih da postoji i petlja ce se izvrsavati.
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+import java.util.*;
+
+public class DomaciZbirDanaZaMesece {
+    public static void main(String[] args){
+        String imeMeseca, sacuvanMesec = "";
+        int brojac, daniMesec=0, daniUkupno=0, brojacPoruke;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Molimo Vas unesite 3 imena bilo kog meseca.");
+        for(brojac=0;brojac<3;brojac++) {
+            if (brojac == 0) {
+                System.out.println("Unesite ime prvog meseca: ");
+            }
+            if (brojac == 1) {
+                System.out.println("Unesite ime drugog meseca: ");
+            }
+            if (brojac == 2) {
+                System.out.println("Unesite ime treceg meseca: ");
+            }
+
+            imeMeseca = in.next();
+
+            if(imeMeseca.equalsIgnoreCase("februar")){ // hvala Google za .equalsIgnoreCase
+                daniMesec=28;
+            }
+            if(imeMeseca.equalsIgnoreCase("januar") || imeMeseca.equalsIgnoreCase("mart") || imeMeseca.equalsIgnoreCase("maj") || imeMeseca.equalsIgnoreCase("jul") || imeMeseca.equalsIgnoreCase("avgust") || imeMeseca.equalsIgnoreCase("oktobar") || imeMeseca.equalsIgnoreCase("decembar")){
+                daniMesec=31;
+            }
+            if(imeMeseca.equalsIgnoreCase("april") || imeMeseca.equalsIgnoreCase("jun") || imeMeseca.equalsIgnoreCase("septembar") || imeMeseca.equalsIgnoreCase("novembar")){
+                daniMesec=30;
+            }
+            else if(!imeMeseca.equalsIgnoreCase("januar") && !imeMeseca.equalsIgnoreCase("februar") && !imeMeseca.equalsIgnoreCase("mart") && !imeMeseca.equalsIgnoreCase("april") && !imeMeseca.equalsIgnoreCase("maj") && !imeMeseca.equalsIgnoreCase("jun") && !imeMeseca.equalsIgnoreCase("jul") && !imeMeseca.equalsIgnoreCase("avgust") && !imeMeseca.equalsIgnoreCase("septembar") && !imeMeseca.equalsIgnoreCase("oktobar") && !imeMeseca.equalsIgnoreCase("novembar") && !imeMeseca.equalsIgnoreCase("decembar")){
+                System.out.println("Molimo Vas da unesete ispravan naziv meseca");
+                brojac--;
+                daniUkupno = daniUkupno - daniMesec;
+            }
+
+            sacuvanMesec = sacuvanMesec + imeMeseca + " ";
+            daniUkupno = daniUkupno + daniMesec;
+            System.out.println("Ukupno dana: "+daniUkupno);
+        }
+        System.out.println("Uneti meseci su: "+sacuvanMesec);
+        System.out.println("Za uneta tri meseca suma dana iznosi: "+daniUkupno);
+    }
+}

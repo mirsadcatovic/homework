@@ -1,0 +1,119 @@
+example file:
+----------------------------------------------------------------------------------------
+3
+bbbbbbbbbb
+cccccccccc
+aaaaaaaaaa
+----------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class NikolaDomaci_03_08_2020 {
+    public static void main(String[] args) throws FileNotFoundException {
+        String filename;
+        int number_n;
+        Scanner in1;
+
+        if(args.length !=1){
+            System.exit(1);
+        }
+        filename=args[0];
+        in1=new Scanner(new File(filename));
+        number_n=0;
+        while(in1.hasNext()){
+            in1.nextLine();
+            number_n++;
+        }
+        System.out.println("Numbers of lines in file: n="+number_n+"."); // numbers of digits in file
+
+        // Number of data lines
+        int intFirstLine;
+        Scanner scFirstLine;
+        filename=args[0];
+        scFirstLine=new Scanner(new File(filename));
+        intFirstLine=Integer.parseInt(scFirstLine.nextLine());
+        System.out.println("Number in first line is number "+intFirstLine+".");
+
+        // All digits from file
+        System.out.println("This is all numbers in file: ");
+        String txtLines;
+        Scanner in2;
+        in2=new Scanner(new File(filename));
+        for(;in2.hasNext();){
+            txtLines=in2.nextLine();
+            System.out.println(txtLines); // Print all file
+        }
+        System.out.println();
+
+        // if we don't need first line this print all lines except first line
+        System.out.println("This is all numbers in file: ");
+        String txtLines2;
+        Scanner in3;
+        int firstLine;
+        in3=new Scanner(new File(filename));
+        firstLine=Integer.parseInt(in3.nextLine());
+        for(;firstLine>0;firstLine--){
+            txtLines2=in3.nextLine();
+            System.out.println(txtLines2); // Print all file
+        }
+        System.out.println();
+
+
+        // MAXIMUM in file (including first line)
+        Scanner inMax;
+        int maximal, num;
+        inMax = new Scanner(new File(filename));
+        maximal = inMax.nextInt();
+        while (inMax.hasNextInt()) {
+            num = inMax.nextInt();
+            if (num > maximal) {
+                maximal=num;
+            }
+        }
+        System.out.println("Maximum value in file is "+maximal+".");
+
+        // MAXIMUM in file (if we don't count first line)
+        Scanner inMax2;
+        int maximal2, num2, firstLine2;
+        inMax2 = new Scanner(new File(filename));
+        firstLine2=Integer.parseInt(inMax2.nextLine());
+        maximal2 = inMax2.nextInt();
+        while (inMax2.hasNextInt()) {
+            num2 = inMax2.nextInt();
+            if (num2 > maximal2) {
+                maximal2=num2;
+            }
+        }
+        System.out.println("Maximum value in file is "+maximal2+".");
+
+        // MINIMUM in file [number 3]
+        Scanner inMin;
+        int minimal, num3;
+        inMin = new Scanner(new File(filename));
+        minimal = inMin.nextInt();
+        while (inMin.hasNextInt()) {
+            num3 = inMin.nextInt();
+            if (num3 < minimal) {
+                minimal=num3;
+            }
+        }
+        System.out.println("Minimum value in file is "+minimal+".");
+
+
+        // MINIMUM in file (if we don't count first line) [number 7]
+        int firstLine3;
+        Scanner inMin2;
+        int minimal2, num4;
+        inMin2 = new Scanner(new File(filename));
+        firstLine3=Integer.parseInt(inMin2.nextLine());
+        minimal2 = inMin2.nextInt();
+        while (inMin2.hasNextInt()) {
+            num4 = inMin2.nextInt();
+            if (num4 < minimal2) {
+                minimal2=num4;
+            }
+        }
+        System.out.println("Minimum value in file is "+minimal2+".");
+    }
+}
+----------------------------------------------------------------------------------------

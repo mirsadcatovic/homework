@@ -1,0 +1,12 @@
+Postman je alat za razvoj softwera pomocu kojeg se mogu vrsiti testiranja razliziti zahteva koji su upuceni API.
+Korisnik Postmana unosi podatke-zahteve, podaci-zahtevi se salju na adresu web servera i onda se vracaju informacije do korisnika.
+
+Metode koje se najcesce koriste u Postman-u su metode GET, POST, PUT, PATCH i DELETE.
+*GET metoda sluzi da dobijemo povratnu informaciju od API.
+*POST metoda koristi se za slanje novih podataka do API.
+*PUT metoda koristi se za slanje podataka za kreiranje ili azuriranje postojecih podataka
+*PATCH metoda je ista kao i PUT samo sto ona vrsi azuriranje postojecih podataka, a ne zamenu celog podatka.
+*DELETE metoda sluzi za brisanje postojeceg podatka.
+
+U Postmanu mozemo poslati zahtev i izvrsiti pregled tog zahteva bez upotrebe terminala ili bez pisanja koda.
+Kada napravimo zahtev i posaljemo ga klikom na dugme Send, odgovor od strane API ce se pojaviti u samom interfejsu Postman-a.

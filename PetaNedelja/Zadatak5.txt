@@ -1,0 +1,8 @@
+//visak su zagrade kod naziva klase
+// class BadExaple() {
+
+class BadExaple {
+    public static void main(String[] args) {
+        System.out.println("Happy Coding");
+    }
+}

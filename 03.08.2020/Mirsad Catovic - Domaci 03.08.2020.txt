@@ -1,0 +1,84 @@
+example file:
+----------------------------------------------------------------------------------------
+5
+5
+8
+6
+9
+4
+9
+7
+9
+1
+8
+5
+----------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Domaci1_03_08_2020 {
+    public static void main(String[] args) throws FileNotFoundException {
+        String filename, txtLines;
+        Scanner in;
+
+        if (args.length != 1) {
+            System.exit(1);
+        }
+
+        filename = args[0];
+        in = new Scanner(new File(filename));
+        while(in.hasNext()){
+            int broj=Integer.parseInt(in.nextLine());
+            if(broj%2==0){
+            System.out.println(broj);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+example file:
+----------------------------------------------------------------------------------------
+5
+5
+8
+6
+9
+4
+9
+7
+9
+1
+8
+5
+----------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Domaci2_03_08_2020 {
+    public static void main(String[] args) throws FileNotFoundException {
+        String filename;
+        Scanner in;
+        int x,y,z;
+
+        if(args.length != 1){
+            System.exit(1);
+        }
+
+        filename=args[0];
+        in=new Scanner(new File(filename));
+        do{
+            x = Integer.parseInt(in.nextLine());
+            y = Integer.parseInt(in.nextLine());
+            z = Integer.parseInt(in.nextLine());
+            System.out.println(String.format("Zbir broja %d, broja %d i broja %d iznosi %d",x,y,z,x+y+z));
+        }while(in.hasNext());
+    }
+}
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+3.FileNotFoundException koristimo da vec sami nagovestimo da moze da se pojavi izuzetak.
+Ukoliko se ne pronadje fajl, tj. put fajla koji importujem, program ne napravi gresku nego 
+bude spreman na izuzetak koji moze na neku drugi nacin da se izvrsi i da nastavi sa radom.

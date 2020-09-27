@@ -1,9 +1,0 @@
-nesto se nalazi u ovom fajlu
-.
-.
-.
-dodali smo ovo pomocu komande nano
-.
-.
-.
-sada smo ponovo dodali ovo pomocu nano

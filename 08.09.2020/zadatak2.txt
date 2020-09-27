@@ -1,0 +1,15 @@
+2. Navesti 3 before/after anotacije i objasniti njihovu funkciju.
+
+@BeforeMethod i @AfterMethod
+@BeforeMethod anotacija znaci da se metoda sa tom anotacijom izvrsava SVAKI put PRE SVAKE @Test metode koja se nalazi u test klasi.
+@AfterMethod anotacija znaci da se metoda sa tom anotacijom izvrsava SVAKI put POSLE SVAKE @Test metode koja se nalazi u test klasi.
+
+@BeforeClass i @AfterClass
+@BeforeClass anotacija znaci da se metoda sa tom anotacijom izvrsava SAMO JEDNOM PRE izvrsavanja ostalih test metoda TE test klase.
+@AfterClass anotacija znaci da se metoda sa tom anotacijom izvrsava SAMO JEDNOM POSLE izvrsavanja ostalih test metoda TE test klase.
+
+@BeforeSuite i @AfterSuite
+@BeforeSuite anotacija znaci da se metoda sa tom anotacijom izvrsava SAMO JEDNOM i to PRE izvrsavanja SVIH test metoda, 
+bez obzira gde se u konfiguratoru nalazi test klasa sa metodom sa @BeforeSuite anotacijom.
+@BeforeSuite anotacija znaci da se metoda sa tom anotacijom izvrsava SAMO JEDNOM i to POSLE izvrsavanja SVIH test metoda, 
+bez obzira gde se u konfiguratoru nalazi test klasa sa metodom sa @BeforeSuite anotacijom.

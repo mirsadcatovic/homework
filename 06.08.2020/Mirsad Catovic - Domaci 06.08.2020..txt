@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class DomaciLunaPark {
+    public static void main(String[] args){
+        int numRides, ticket, repeatRide = 3;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter number of rides in amusement park: ");
+        numRides = in.nextInt();
+            if(numRides<1){
+                System.out.println("You must enter number that is greater than 0.");
+                System.exit(1);
+            }
+
+        System.out.println("Please choose which ticket do you want.");
+        System.out.println("For blue tickets enter 1");
+        System.out.println("For red tickets enter 2");
+        System.out.println("For green tickets enter 3");
+        ticket = in.nextInt();
+
+        switch (ticket){
+            case 1:
+                if(numRides==1){
+                    System.out.println("You will need "+numRides * repeatRide+" blue tickets to ride "+numRides+" ride 3 times.");
+                }else {
+                    System.out.println("You will need " + numRides * repeatRide + " blue tickets to ride " + numRides + " rides 3 times.");
+                }
+                break;
+            case 2:
+                if(numRides==1){
+                    System.out.println("You will need "+numRides * 2 * repeatRide+" red tickets to ride "+numRides+" ride 3 times.");
+                }else {
+                    System.out.println("You will need " + numRides * 2 * repeatRide + " red tickets to ride " + numRides + " rides 3 times.");
+                }
+                break;
+            case 3:
+                if(numRides==1){
+                    System.out.println("You will need "+numRides * 4 * repeatRide+" green tickets to ride "+numRides+" ride 3 times.");
+                }else {
+                    System.out.println("You will need " + numRides * 4 * repeatRide + " green tickets to ride " + numRides + " rides 3 times.");
+                }
+                break;
+            default:
+                System.out.println("Option that you chose is not available. Please choose valid option.");
+                break;
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
+import java.util.*;
+
+public class DuzinaBroja {
+    public static void main(String[] args){
+        // upotrebljeni brojevi 7, 25, 131, 457, 1382
+        String[] word = {"sedam", "dvadesetpet", "stotridesetjedan", "cetristopedesetsedam", "hiljadutristaosamdesetdva"};
+        // moze i ovako da se prestavi, ali bi posle u switch pod if-ovima u stampanju moralo da stoji
+        // broj1.length()   broj2.length()   broj3.length()  broj4.length()   broj5.length()
+        //String broj1 = "sedam", broj2 = "dvadesetpet", broj3 = "stotridesetjedan", broj4 = "cetristopedesetsedam", broj5 = "hiljadutristaosamdesetdva";
+        int number, option;
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Unesite broj: ");
+        number = in.nextInt();
+        if(number != 7 && number != 25 && number != 131 && number != 457 && number != 1382){
+            System.out.println("Molimo Vas da unesete neki od ponudjenih brojeva. 7, 25, 131, 457 i 1382");
+            System.out.println("Hvala.");
+            System.exit(1);
+        }
+        System.out.println("Izaberite opciju 1 da biste saznali broj slova u Vasem broju.");
+        option=in.nextInt();
+
+        switch (option){
+            case 1:
+                if(number == 7){
+                    System.out.println("Broj 7 se sastoji od "+word[0].length()+" slova.");
+                }
+                if(number == 25){
+                    System.out.println("Broj 25 se sastoji od "+word[1].length()+" slova.");
+                }
+                if(number == 131){
+                    System.out.println("Broj 131 se sastoji od "+word[2].length()+" slova.");
+                }
+                if(number == 457){
+                    System.out.println("Broj 457 se sastoji od "+word[3].length()+" slova.");
+                }
+                if(number == 1382){
+                    System.out.println("Broj 1382 se sastoji od "+word[4].length()+" slova.");
+                }
+                break;
+            default:
+                System.out.println("Zao nam je. Za sada je dostupna samo opcija 1. Hvala na razumevanju.");
+                break;
+        }
+    }
+}
